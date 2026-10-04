@@ -3,7 +3,7 @@
 **Course:** Design and Analysis of Algorithms  
 **Instructor:** Taubakabyl Nurlybek  
 **Student:** Nursultan Maratov  
-**Group:** [Your Group Name Here, e.g., SE-2301]  
+**Group:** SE-2523  
 **Date:** October 2026  
 
 ---
