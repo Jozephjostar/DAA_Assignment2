@@ -116,17 +116,7 @@ All benchmarks were run with seed `42` for $n \in \{100, 1\,000, 10\,000, 100\,0
 
 ---
 
-## 4. Discussion
-
-`DynamicArray` is much faster for `get(i)` and sequential iteration because of CPU cache lines and spatial locality. In an array, primitive integers are stored in contiguous memory. When the CPU reads an element, it automatically loads a 64-byte cache line containing 16 consecutive integers into fast L1/L2 cache, allowing subsequent reads to occur almost instantly without memory stalls.
-
-In contrast, `MyLinkedList` stores each element in a separate `Node` object allocated on the heap. Traversing the list requires dereferencing pointers (`curr.next`), a process called *pointer chasing*. Because nodes are scattered across memory, each jump frequently causes a CPU cache miss, forcing the processor to wait for RAM. Additionally, each node object has metadata overhead (object header, references, memory alignment) and creates extra work for the Java garbage collector.
-
-`MyLinkedList` is only the better choice when operations happen strictly at the ends of the structure (like a queue or stack at head and tail), where $O(1)$ pointer updates avoid shifting array elements. For priority-based scheduling and repeatedly extracting the minimum element, `MinHeap` is the ideal structure because it guarantees logarithmic $O(\log n)$ operations with compact array storage.
-
----
-
-## 5. Bonus Tasks
+## 4. Bonus Tasks
 
 ### Task A: Memory Footprint (JOL)
 
